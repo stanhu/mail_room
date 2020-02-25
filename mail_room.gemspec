@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'mail_room/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "mail_room"
+  gem.name          = "gitlab_mail_room"
   gem.version       = MailRoom::VERSION
   gem.authors       = ["Tony Pitale"]
   gem.email         = ["tpitale@gmail.com"]
