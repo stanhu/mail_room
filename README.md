@@ -1,5 +1,11 @@
 # mail_room #
 
+## Fork notice
+
+mail_room contains some merged functionality that GitLab requires, so this mirror fork is to help us release custom functionality.
+
+## README
+
 mail_room is a configuration based process that will idle on IMAP connections and execute a delivery method when a new message is received. Examples of delivery methods include:
 
 * POST to a delivery URL (Postback)
