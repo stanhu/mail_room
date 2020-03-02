@@ -26,7 +26,9 @@ module MailRoom
         end
 
         parser.on('--log-exit-as') do |format|
-          options[:exit_error_format] = 'json' unless format.nil?
+          # accepts 'json' and 'plain'
+          # 'plain' is equivalent to no format given
+          options[:exit_error_format] = format unless format.nil?
         end
 
         # parser.on("-l", "--log FILE") do |path|
