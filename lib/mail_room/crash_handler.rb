@@ -4,7 +4,7 @@ module MailRoom
 
     attr_reader :error, :format
 
-    SUPPORTED_FORMATS = %w[json none]
+    SUPPORTED_FORMATS = %w[json plain]
 
     def initialize(error:, format:)
       @error = error
@@ -17,6 +17,7 @@ module MailRoom
         return
       end
 
+      # 'plain' is equivalent to outputting the error into stdout as-is
       raise error
     end
 
