@@ -2,7 +2,21 @@
 
 ## Fork notice
 
-mail_room contains some merged functionality that GitLab requires, so this mirror fork is to help us release custom functionality.
+`mail_room` contains some merged functionality that GitLab requires, so this mirror fork is to help us release custom functionality.
+
+It needs to be more or less kept up to date with the original, so please feel free to incorporate changes to the upstream repo if you see them.
+
+### Rationale
+
+This fork is required to reduce dependency on the upstream releases.
+
+The [original JSON structured logging PR](https://github.com/tpitale/mail_room/pull/88) was [released](https://github.com/tpitale/mail_room/commit/deb8fe63bab21c5c3003346961a815d137ff6d2d) and we [bumped the version](https://gitlab.com/gitlab-org/omnibus-gitlab/-/merge_requests/3719) to incorporate it into [omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab).
+It turned out that when Mailroom crashed out (which it's designed to do), the crash log [wasn't being pulled into elastic in a very useful way](https://github.com/tpitale/mail_room/commits/master) (that is, every line of the stack trace was a new event) so [another PR](https://github.com/tpitale/mail_room/pull/103) was raised.
+
+Rather than wait for the author (or bugging him more than once), we [opted for bias for action](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/19186#note_290758986) and made a fork of the gem.
+Here it is [in omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab/-/merge_requests/3960).
+
+The fork is useful as we can post quick fixes to our own fork and release fixes quickly, and still contribute those fixes upstream to help others.
 
 ## README
 
