@@ -1,4 +1,4 @@
 module MailRoom
-  # Current version of MailRoom gem
-  VERSION = "0.0.4"
+  # Current version of gitlab-mail_room gem
+  VERSION = "0.0.5"
 end
