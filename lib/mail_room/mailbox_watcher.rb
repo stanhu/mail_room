@@ -49,9 +49,14 @@ module MailRoom
         @connection = nil
       end
 
+      @mailbox.logger.info({ context: @mailbox.context, action: "Terminating watching thread..." })
+
       if self.watching_thread
-        self.watching_thread.join
+        thr = self.watching_thread.join(60)
+        @mailbox.logger.info({ context: @mailbox.context, action: "Timeout waiting for watching thread" }) unless thr
       end
+
+      @mailbox.logger.info({ context: @mailbox.context, action: "Done with thread cleanup" })
     end
 
     private
