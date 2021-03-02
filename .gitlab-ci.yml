@@ -10,7 +10,7 @@ services:
   variables:
     REDIS_URL: redis://redis:6379
   script:
-  - bundle exec rspec spec
+    - bundle exec rspec spec
   before_script:
     - apt update && apt install -y libicu-dev
     - ruby -v                                   # Print out ruby version for debugging
